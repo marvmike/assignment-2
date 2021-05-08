@@ -99,12 +99,30 @@ function keydown(event) {
 	}
 }
 
+function myClickFunction(){
+	var element = document.getElementById('start');
+	start.style.display = 'none';
+
+	var element = document.getElementById('bomb');
+	bomb.style.display;
+	var positionTop = element.offsetTop;
+	element.style.top = positionTop + 10 + 'px';
+	
+}
 
 function myLoadFunction() {
+
+	var element = document.getElementById('start');
+	element.addEventListener('click', myClickFunction);	
+
+	var element = document.getElementById('bomb');
+	element.addEventListener('click', myClickFunction);	
+
 	timeout = setInterval(move, 10);
 	document.addEventListener('keydown', keydown);
 	document.addEventListener('keyup', keyup);
 }
 
-
 document.addEventListener('DOMContentLoaded', myLoadFunction);
+
+
